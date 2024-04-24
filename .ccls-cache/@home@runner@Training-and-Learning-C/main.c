@@ -1,18 +1,20 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int main() {
-    char* message = "Hello, world!"; // 'message' points to the first character of the string
-    message = "Now it's this";       // 'message' now points to a new string literal
+// list.c
 
-    // Printing the string using the pointer
-    printf("%s\n", message);
+typedef struct node
+{
+  int number;
+  struct node *next;
+} node;
 
-    // Printing the address of the first character
-    printf("The address of the first character is: %p\n", &message);
-    // Printing the address of the second character
-    printf("The address of the second character is: %p\n", &message + 1);
+int main(int argc, char *argv[])
+{
+  node *list = NULL;
 
-    return 0;
+  for (int i = 0; i < argc; i++)
+    {
+      printf("%s\n", argv[i]);
+    }
 }
-
