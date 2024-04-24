@@ -1,21 +1,11 @@
 #include <stdio.h>
 
-//swap.c
-
-void swap(int *a, int *b);
+//get.c
 
 int main(void)
 {
-  int x = 1;
-  int y = 2;
-  printf("x is %i, y is %i\n", x, y);
-  swap(&x, &y);
-  printf("x is %i, y is %i\n", x, y);
-}
-
-void swap (int* a, int* b)
-{
-  int temp = *a;
-  *a = *b;
-  *b = temp;
+  char s[4];
+  printf("S: ");
+  scanf("%s", s);
+  printf("S!! %s\n", s);
 }
