@@ -1,18 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <cs50.h>
 
-//phonebook.c
+int main() {
+    char* message = "Hello, world!"; // 'message' points to the first character of the string
+    message = "Now it's this";       // 'message' now points to a new string literal
 
-int main(void)
-{
-  FILE *file = fopen("phonebook.csv", "a");
+    // Printing the string using the pointer
+    printf("%s\n", message);
 
-  char* name = get_string("Name: ");
-  char* number = get_string("Number: ");
+    // Printing the address of the first character
+    printf("The address of the first character is: %p\n", &message);
+    // Printing the address of the second character
+    printf("The address of the second character is: %p\n", &message + 1);
 
-  fprintf(file, "%s, %s\n", name, number);
-
-  fclose(file);
+    return 0;
 }
+
