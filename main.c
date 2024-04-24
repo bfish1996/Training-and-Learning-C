@@ -1,12 +1,21 @@
 #include <stdio.h>
 
-//garbage.c
+//swap.c
+
+void swap(int *a, int *b);
 
 int main(void)
 {
-  int scores[1024];
-  for (int i = 0; i < 1024; i++)
-  {
-    printf("%i\n", scores[i]);
-  } 
+  int x = 1;
+  int y = 2;
+  printf("x is %i, y is %i\n", x, y);
+  swap(&x, &y);
+  printf("x is %i, y is %i\n", x, y);
+}
+
+void swap (int* a, int* b)
+{
+  int temp = *a;
+  *a = *b;
+  *b = temp;
 }
