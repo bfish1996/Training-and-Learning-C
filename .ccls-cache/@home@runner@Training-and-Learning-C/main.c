@@ -1,38 +1,24 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 
 // list.c
 
 typedef struct node
 {
-  int number;
+  char* name;
+  char* number;
   struct node *next;
 } node;
 
-int main(int argc, char *argv[])
+int main(void)
 {
-  node *list = NULL;
+  node * table[26];
+}
 
-  for (int i = 0; i < argc; i++)
-    {
-      int number = atoi(argv[i]);
-
-      node *n = malloc(sizeof(node));
-      if (n == NULL)
-      {
-        return 1;
-      }
-      n->number = number;
-      n->next = list;
-      list = n;
-      
-      printf("%s\n", argv[i]);
-    }
-  node *ptr = list;
-  while(ptr != NULL)
-    {
-      printf("%i\n", ptr->number);
-      ptr = ptr->next;
-    }
+int hash (const char* word)
+{
+  return toupper(word[0] - 'A');
 }
